@@ -7,8 +7,8 @@ app.use(morgan('combined'));
 
 
 var articles={
-    articleone:{
-    tittle:"Article One|Abhinav",
+    "article-one":{
+    title:"Article One|Abhinav",
     heading:"Article One",
     date:"Feb 17,1018",
     content:
@@ -22,7 +22,7 @@ var articles={
                     This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage
                 </p>`
     },
-    articletwo:{tittle:"Article Two|Raj",
+    "article-two":{title:"Article Two|Raj",
     heading:"Article Two",
     date:"Jan 2,1018",
     content:`
@@ -36,8 +36,8 @@ var articles={
                 This is my third article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage
             </p>`
     },
-    articlethree:{
-    tittle:"Article Three|Pranjal",
+    "article-three":{
+    title:"Article Three|Pranjal",
     heading:"Article Three",
     date:"Feb 14,1018",
     content:`
@@ -93,16 +93,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/1',function(req,res){
-  res.send(createtemplate(articleone));
-});
-
-app.get('/2',function(req,res){
-    res.send(createtemplate(articletwo));
-});
-
-app.get('/3',function(req,res){
-    res.send(createtemplate(articlethree));
+app.get('/:articlesName',function(req,res){
+    var articleName=req.paroes.articleName;
+  res.send(createtemplate(articles[articlesName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
