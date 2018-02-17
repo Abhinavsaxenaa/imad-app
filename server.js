@@ -52,7 +52,7 @@ var articles={
             </p>`
     }
 };
-function createtemplate (data)
+function createTemplate (data)
 {
     var title = data.title;
     var heading=data.heading;
@@ -63,7 +63,7 @@ function createtemplate (data)
     <html>
         <head>
             <title>
-                  ${title}
+                 ${title}
             </title>
             <link href="/ui/style.css" rel="stylesheet" />
             <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -95,7 +95,7 @@ app.get('/', function (req, res) {
 
 app.get('/:articleName',function(req,res){
     var articleName=req.params.articleName;
-  res.send(createtemplate(articles[articleName]));
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
