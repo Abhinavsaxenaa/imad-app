@@ -52,7 +52,7 @@ var articles={
             </p>`
     }
 };
-function createtemplate(data)
+function createtemplate (data)
 {
     var title=data.title;
     var heading=data.heading;
@@ -93,8 +93,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:articlesName',function(req,res){
-    var articlesName=req.params.articlesName;
+app.get('/:articleName',function(req,res){
+    var articleName=req.params.articleName;
   res.send(createtemplate(articles[articlesName]));
 });
 
