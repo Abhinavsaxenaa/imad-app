@@ -6,8 +6,8 @@ var app = express();
 app.use(morgan('combined'));
 
 
-
-var articleone={
+var articles={
+    articleone:{
     tittle:"Article One|Abhinav",
     heading:"Article One",
     date:"Feb 17,1018",
@@ -21,6 +21,36 @@ var articleone={
                 <p>
                     This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage
                 </p>`
+    },
+    articletwo:{tittle:"Article Two|Raj",
+    heading:"Article Two",
+    date:"Jan 2,1018",
+    content:`
+    <p>
+                This is my third article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage. 
+            </p>
+            <p>
+                This is my third article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.
+            </p>
+            <p>
+                This is my third article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage
+            </p>`
+    },
+    articlethree:{
+    tittle:"Article Three|Pranjal",
+    heading:"Article Three",
+    date:"Feb 14,1018",
+    content:`
+    <p>
+                This is my third article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage. 
+            </p>
+            <p>
+                This is my third article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.
+            </p>
+            <p>
+                This is my third article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage.This is my first article for my webpage
+            </p>`
+    }
 };
 function createtemplate(data)
 {
@@ -68,11 +98,11 @@ app.get('/1',function(req,res){
 });
 
 app.get('/2',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+    res.send(createtemplate(articletwo));
 });
 
 app.get('/3',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+    res.send(createtemplate(articlethree));
 });
 
 app.get('/ui/style.css', function (req, res) {
