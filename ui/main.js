@@ -1,6 +1,6 @@
 console.log('Loaded!');
 var element = document.getElementById("text1");
-element.innerHTML="bye bye";
+element.innerHTML="Click on the Image provided above.";
 
 var element1 = document.getElementById("img1");
 var marginLeft=0;
