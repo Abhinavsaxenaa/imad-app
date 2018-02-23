@@ -52,8 +52,7 @@ var articles={
             </p>`
     }
 };
-function createTemplate (data)
-{
+function createTemplate(data) {
     var tittle = data.tittle;
     var heading=data.heading;
     var date=data.date;
