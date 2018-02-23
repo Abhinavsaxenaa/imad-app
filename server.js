@@ -53,12 +53,12 @@ var articles={
     }
 };
 function createTemplate(data) {
-    var tittle=data.tittle;
-    var heading=data.heading;
-    var date=data.date;
-    var content=data.content;
+var tittle=data.tittle;
+var heading=data.heading;
+var date=data.date;
+var content=data.content;
 
-    var htmlTemplate=`
+var htmlTemplate=`
     <html>
         <head>
             <title>
